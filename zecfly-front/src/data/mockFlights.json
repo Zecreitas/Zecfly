@@ -1,0 +1,43 @@
+{
+  "flights": [
+    {
+      "id": "flight-001",
+      "airline": "TAM",
+      "logo": "/images/airlines/tam.png",
+      "departure": "2024-06-15T08:30:00",
+      "arrival": "2024-06-15T11:45:00",
+      "origin": "São Paulo (GRU)",
+      "destination": "Rio de Janeiro (GIG)",
+      "price": 299.90,
+      "stops": 0,
+      "duration": "3h 15m",
+      "aircraft": "Boeing 737"
+    },
+    {
+      "id": "flight-002",
+      "airline": "GOL",
+      "logo": "/images/airlines/gol.png",
+      "departure": "2024-06-15T10:15:00",
+      "arrival": "2024-06-15T13:30:00",
+      "origin": "São Paulo (GRU)",
+      "destination": "Rio de Janeiro (GIG)",
+      "price": 279.90,
+      "stops": 0,
+      "duration": "3h 15m",
+      "aircraft": "Boeing 737"
+    },
+    {
+      "id": "flight-003",
+      "airline": "Azul",
+      "logo": "/images/airlines/azul.png",
+      "departure": "2024-06-15T14:00:00",
+      "arrival": "2024-06-15T17:15:00",
+      "origin": "São Paulo (GRU)",
+      "destination": "Rio de Janeiro (GIG)",
+      "price": 319.90,
+      "stops": 0,
+      "duration": "3h 15m",
+      "aircraft": "Airbus A320"
+    }
+  ]
+} 

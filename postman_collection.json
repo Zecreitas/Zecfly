@@ -1,0 +1,167 @@
+{
+  "info": {
+    "name": "Zecfly API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Amadeus API",
+      "item": [
+        {
+          "name": "Get Access Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": {
+              "raw": "https://test.api.amadeus.com/v1/security/oauth2/token",
+              "protocol": "https",
+              "host": ["test", "api", "amadeus", "com"],
+              "path": ["v1", "security", "oauth2", "token"]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{amadeus_client_id}}"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{amadeus_client_secret}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Flights",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{amadeus_token}}"
+              }
+            ],
+            "url": {
+              "raw": "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=GRU&destinationLocationCode=CDG&departureDate=2024-04-01&adults=1&currencyCode=BRL&max=5",
+              "protocol": "https",
+              "host": ["test", "api", "amadeus", "com"],
+              "path": ["v2", "shopping", "flight-offers"],
+              "query": [
+                {
+                  "key": "originLocationCode",
+                  "value": "GRU"
+                },
+                {
+                  "key": "destinationLocationCode",
+                  "value": "CDG"
+                },
+                {
+                  "key": "departureDate",
+                  "value": "2024-04-01"
+                },
+                {
+                  "key": "adults",
+                  "value": "1"
+                },
+                {
+                  "key": "currencyCode",
+                  "value": "BRL"
+                },
+                {
+                  "key": "max",
+                  "value": "5"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Booking.com API",
+      "item": [
+        {
+          "name": "Search Hotels",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{booking_api_key}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://distribution-xml.booking.com/json/bookings/hotels?checkin=2024-04-01&checkout=2024-04-05&room_number=1&guest_number=2&city=Paris&currency=BRL&rows=5",
+              "protocol": "https",
+              "host": ["distribution-xml", "booking", "com"],
+              "path": ["json", "bookings", "hotels"],
+              "query": [
+                {
+                  "key": "checkin",
+                  "value": "2024-04-01"
+                },
+                {
+                  "key": "checkout",
+                  "value": "2024-04-05"
+                },
+                {
+                  "key": "room_number",
+                  "value": "1"
+                },
+                {
+                  "key": "guest_number",
+                  "value": "2"
+                },
+                {
+                  "key": "city",
+                  "value": "Paris"
+                },
+                {
+                  "key": "currency",
+                  "value": "BRL"
+                },
+                {
+                  "key": "rows",
+                  "value": "5"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "amadeus_client_id",
+      "value": "seu_client_id_aqui"
+    },
+    {
+      "key": "amadeus_client_secret",
+      "value": "seu_client_secret_aqui"
+    },
+    {
+      "key": "amadeus_token",
+      "value": "token_obtido_apos_autenticacao"
+    },
+    {
+      "key": "booking_api_key",
+      "value": "sua_api_key_aqui"
+    }
+  ]
+} 
